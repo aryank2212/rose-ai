@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "rose-agent"
+version = "0.1.0"
+description = "ROSE — Responsive On-device Synthetic Engine. A fully local AI assistant powered by Ollama."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "ROSE Contributors"},
+]
+keywords = ["ai", "assistant", "ollama", "local", "agent", "cli", "voice", "gemma"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "ollama>=0.6.0",
+    "httpx>=0.28.0",
+    "requests>=2.31.0",
+    "colorama>=0.4.6",
+    "beautifulsoup4>=4.12.0",
+    "psutil>=5.9.0",
+]
+
+[project.optional-dependencies]
+voice = [
+    "PyAudio>=0.2.14",
+    "faster-whisper>=1.0.0",
+    "openwakeword>=0.6.0",
+    "webrtcvad>=2.0.10",
+]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.4.0",
+]
+
+[project.scripts]
+rose = "rose.main:main"
+
+[project.urls]
+Homepage = "https://github.com/aryank2212/ROSE"
+Repository = "https://github.com/aryank2212/ROSE"
+Issues = "https://github.com/aryank2212/ROSE/issues"
+
+[tool.setuptools.packages.find]
+include = ["rose*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
