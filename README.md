@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌹 ROSE
+#   ROSE
 
 **Responsive On-device Synthetic Engine**
 
